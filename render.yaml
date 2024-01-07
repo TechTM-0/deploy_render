@@ -1,0 +1,43 @@
+services:
+  - type: pserv
+    name: app
+    env: docker
+    buildCommand: "docker build -f ./docker/php/Dockerfile -t app ."
+    startCommand: "docker run -d -p 9000:80 app"
+    envVars:
+      - key: MYSQL_ROOT_PASSWORD
+        value: ${MYSQL_ROOT_PASSWORD}
+      - key: MYSQL_DATABASE
+        value: ${MYSQL_DATABASE}
+      - key: MYSQL_USER
+        value: ${MYSQL_USER}
+      - key: MYSQL_PASSWORD
+        value: ${MYSQL_PASSWORD}
+    disks:
+      - name: src
+        mountPath: /var/www/html
+  - type: pserv
+    name: mysql
+    env: docker
+    image: "mysql:8.0"
+    envVars:
+      - key: MYSQL_ROOT_PASSWORD
+        value: ${MYSQL_ROOT_PASSWORD}
+      - key: MYSQL_DATABASE
+        value: ${MYSQL_DATABASE}
+      - key: MYSQL_USER
+        value: ${MYSQL_USER}
+      - key: MYSQL_PASSWORD
+        value: ${MYSQL_PASSWORD}
+    disks:
+      - name: mysqldata
+        mountPath: /var/lib/mysql
+  - type: web
+    name: nginx
+    env: docker
+    image: "nginx:1.25.0"
+    ports:
+      - 10000
+    disks:
+      - name: src
+        mountPath: /var/www/html

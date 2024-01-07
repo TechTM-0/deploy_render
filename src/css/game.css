@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+/* works
+----------------------------------------- */
+#GameSpace {
+	margin-bottom: 30px;
+}
+#worksList li {
+	margin-bottom: 60px;
+}
+#worksList li.last {
+	margin-bottom: 0;
+}
+#worksList .img {
+	margin-bottom: 35px;
+	text-align: center;
+}
+#worksList .img img {
+	width: 100%;
+	height: auto;
+}
+#worksList h3.ttl {
+	margin-bottom: 15px;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: left;
+	line-height: 1.5;
+}
+#worksList img.popup {
+	width: 11px;
+	height: 9px;
+	vertical-align: middle;
+}
+#worksList .skill {
+	margin-bottom: 15px;
+}
+#worksList .read01 {
+	margin-bottom: 70px;
+}
+#worksList .read02 {
+	margin-bottom: 15px;
+}
+#worksList .readLast {
+	margin-bottom: 30px;
+}
+
+/* タブレット向け：760px～960px */
+@media only screen and (min-width: 760px) {
+
+#worksList {
+	margin-bottom: 50px;
+	font-size: 15px;
+}
+#worksList li {
+	margin-bottom: 120px;
+}
+#worksList li.last {
+	margin-bottom: 0;
+}
+#worksList .img {
+	margin-bottom: 45px;
+}
+#worksList h3.ttl {
+	font-size: 15px;
+}
+#worksList .read01 {
+	margin-bottom: 70px;
+}
+#worksList .read02 {
+	margin-bottom: 25px;
+}
+
+} /* タブレット向け */
+
+
+/* PC向けレイアウトの指定：961px～ */
+@media only screen and (min-width: 961px) {
+#worksList li {
+	margin-bottom: 160px;
+}
+
+
+} /* PC向け */

@@ -1,0 +1,26 @@
+Renderサーバー (IP: 192.168.x.x)
+│
+├── portfolio/
+│   ├── docker/
+│   │   ├── mysql/ (IP: 172.20.x.2)
+│   │   │   └── my.cnf  ← Dockerコンテナ
+│   │   │       └── ポート: 3306
+│   │   │       └── バインド: 0.0.0.0:3306 (すべてのネットワークからの接続を受け入れる)
+│   │   ├── nginx/ (IP: 172.20.x.3)
+│   │   │   └── default.conf  ← Dockerコンテナ
+│   │   │       └── ポート: 80
+│   │   │       └── バインド: 0.0.0.0:10000 (すべてのネットワークからの接続を受け入れる)
+│   │   │       └── Renderリンク: https://your-app.onrender.com
+│   │   └── php/ (IP: 172.20.x.4)
+│   │       ├── Dockerfile  ← Dockerコンテナ
+│   │       │
+│   ├── src/
+│   │   └── index.php
+│   │   └── php
+│   │       └── vendor
+│   ├── docker-compose.yml
+│   └── .env
+│   └── struct
+│
+└── ユーザーのブラウザ (IP: 203.0.x.x)
+    └── アクセス: Renderサーバー内のDockerコンテナ（mysql、nginx、php） via https://your-app.onrender.com

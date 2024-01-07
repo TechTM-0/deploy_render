@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+/* about
+----------------------------------------- */
+.imgFace {
+	margin-bottom: 40px;
+	text-align: center;
+}
+.imgFace img {
+	width: 160px;
+	height: 160px;
+}
+.companyProf {
+	margin-bottom: 30px;
+	font-size: 11px;
+}
+.companyProf dt {
+	float: left;
+	display: block;
+	width: 30%;
+	font-weight: bold;
+}
+.companyProf dd {
+	float: right;
+	width: 70%;
+	font-size: 12px;
+}
+.txtBox {
+	margin-bottom: 30px;
+}
+
+/* タブレット向け：760px～960px */
+@media only screen and (min-width: 760px) {
+	
+.fBox01 {
+	width: 100%;
+}
+.fBox01 .fBoxLeft {
+	float: left; 
+	width: 20%;
+	text-align: left;
+}
+.fBox01 .fBoxRight {
+	float: right; 
+	width: 70%;
+}
+.companyProf {
+	margin-bottom: 20px;
+	font-size: 13px;
+}
+.companyProf dt {
+	float: left;
+	display: block;
+	width: 20%;
+	font-weight: bold;
+}
+.companyProf dd {
+	float: right;
+	width: 80%;
+	font-size: 13px;
+}
+.txtBox {
+	margin-bottom: 50px;
+}
+
+} /* タブレット向け */
+
+
+/* PC向けレイアウトの指定：961px～ */
+@media only screen and (min-width: 961px) {
+
+.fBox01 {
+	width: 960px;
+}
+.fBox01 .fBoxLeft {
+	float: left; 
+	width: 160px;
+	text-align: left;
+}
+.fBox01 .fBoxRight {
+	float: right; 
+	width: 760px;
+}
+
+} /* PC向け */
