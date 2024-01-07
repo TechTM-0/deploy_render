@@ -19,7 +19,7 @@ services:
   - type: pserv
     name: mysql
     env: docker
-    image: "mysql:8.0" #cannot unmarshal !!str 'mysql1:8:0' into file.Image
+    image: mysql:8.0 #cannot unmarshal !!str 'mysql1:8:0' into file.Image
     startCommand: "docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} -e MYSQL_DATABASE=${MYSQL_DATABASE} -e MYSQL_USER=${MYSQL_USER} -e MYSQL_PASSWORD=${MYSQL_PASSWORD} mysql:8.0"
     envVars:
       - key: MYSQL_ROOT_PASSWORD
@@ -36,7 +36,7 @@ services:
   - type: web
     name: nginx
     env: docker
-    image: "nginx:1.25.0" #cannot unmarshal !!str 'nginx:1..' into file.Image
+    image: nginx:1.25.0 #cannot unmarshal !!str 'nginx:1..' into file.Image
     startCommand: "docker run -d -p 80:80 nginx:1.25.0"
     #ports: # field ports not found in type file.Service
     #- 10000
