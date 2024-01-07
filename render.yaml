@@ -39,7 +39,7 @@ services:
     env: docker
     image: 
       url: 'nginx:1.25.0'
-    startCommand: "docker run -d -p 80:80 nginx:1.25.0"
+    #startCommand: "docker run -d -p 80:80 nginx:1.25.0"
     #ports: # field ports not found in type file.Service
     #- 10000
     envVars:
