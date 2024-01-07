@@ -14,8 +14,8 @@ services:
       - key: MYSQL_PASSWORD
         value: ${MYSQL_PASSWORD}
       #disks: #field disks not found in type file.Service
-      - name: src
-        mountPath: /var/www/html
+      #- name: src
+        #mountPath: /var/www/html
   - type: pserv
     name: mysql
     env: docker
@@ -32,8 +32,8 @@ services:
       - key: MYSQL_PASSWORD
         value: ${MYSQL_PASSWORD}
       #disks: #field disks not found in type file.Service
-      - name: mysqldata
-        mountPath: /var/lib/mysql
+      #- name: mysqldata
+        #mountPath: /var/lib/mysql
   - type: web
     name: nginx
     env: docker
@@ -44,5 +44,5 @@ services:
     #- 10000
     envVars:
       #disks: #field disks not found in type file.Service
-      - name: src
-        mountPath: /var/www/html
+      #- name: src
+        #mountPath: /var/www/html
