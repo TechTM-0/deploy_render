@@ -3,7 +3,7 @@ services:
     name: app
     env: docker
     buildCommand: "docker build -f ./docker/php/Dockerfile -t app ."
-    startCommand: "docker run -d -p 9000:80 app"
+    startCommand: "docker run -d -p 3306:3306 app"
     envVars:
       - key: MYSQL_ROOT_PASSWORD
         value: ${MYSQL_ROOT_PASSWORD}
@@ -13,13 +13,14 @@ services:
         value: ${MYSQL_USER}
       - key: MYSQL_PASSWORD
         value: ${MYSQL_PASSWORD}
-    disks:
+      #disks: #field disks not found in type file.Service
       - name: src
         mountPath: /var/www/html
   - type: pserv
     name: mysql
     env: docker
-    image: "mysql:8.0"
+    image: "mysql:8.0" #cannot unmarshal !!str 'mysql1:8:0' into file.Image
+    startCommand: "docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} -e MYSQL_DATABASE=${MYSQL_DATABASE} -e MYSQL_USER=${MYSQL_USER} -e MYSQL_PASSWORD=${MYSQL_PASSWORD} mysql:8.0"
     envVars:
       - key: MYSQL_ROOT_PASSWORD
         value: ${MYSQL_ROOT_PASSWORD}
@@ -29,15 +30,17 @@ services:
         value: ${MYSQL_USER}
       - key: MYSQL_PASSWORD
         value: ${MYSQL_PASSWORD}
-    disks:
+      #disks: #field disks not found in type file.Service
       - name: mysqldata
         mountPath: /var/lib/mysql
   - type: web
     name: nginx
     env: docker
-    image: "nginx:1.25.0"
-    ports:
-      - 10000
-    disks:
+    image: "nginx:1.25.0" #cannot unmarshal !!str 'nginx:1..' into file.Image
+    startCommand: "docker run -d -p 80:80 nginx:1.25.0"
+    #ports: # field ports not found in type file.Service
+    #- 10000
+    envVars:
+      #disks: #field disks not found in type file.Service
       - name: src
         mountPath: /var/www/html
