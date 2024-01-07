@@ -3,7 +3,7 @@ services:
     name: app
     env: docker
     buildCommand: "docker build -f ./docker/php/Dockerfile -t app ."
-    startCommand: "docker run -d -p 3306:3306 app"
+    #startCommand: "docker run -d -p 3306:3306 app"
     envVars:
       - key: MYSQL_ROOT_PASSWORD
         value: ${MYSQL_ROOT_PASSWORD}
@@ -21,7 +21,7 @@ services:
     env: docker
     image: 
       url: 'mysql:8.0'
-    startCommand: "docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} -e MYSQL_DATABASE=${MYSQL_DATABASE} -e MYSQL_USER=${MYSQL_USER} -e MYSQL_PASSWORD=${MYSQL_PASSWORD} mysql:8.0"
+    #startCommand: "docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} -e MYSQL_DATABASE=${MYSQL_DATABASE} -e MYSQL_USER=${MYSQL_USER} -e MYSQL_PASSWORD=${MYSQL_PASSWORD} mysql:8.0"
     envVars:
       - key: MYSQL_ROOT_PASSWORD
         value: ${MYSQL_ROOT_PASSWORD}
