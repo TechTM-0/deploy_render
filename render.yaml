@@ -3,7 +3,7 @@ services:
     name: app
     runtime: docker
     rootDir: ./
-    buildCommand: "docker build -f ./docker/php/Dockerfile -t app ."
+    buildCommand: docker build -f ./docker/php/Dockerfile -t app .
     #startCommand: "docker run -d -p 3306:3306 app"
     envVars:
       - key: MYSQL_ROOT_PASSWORD
