@@ -2,6 +2,7 @@ services:
   - type: web
     name: app
     runtime: docker
+    region: singapore # optional (defaults to oregon)
     rootDir: ./
     buildCommand: docker build -f ./docker/php/Dockerfile -t app .
     #startCommand: "docker run -d -p 3306:3306 app"
