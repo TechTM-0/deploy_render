@@ -1,3 +1,5 @@
+
+#PHP-------------------------------------------------------------
 # ベースとなるイメージを指定
 FROM php:8.1.18-fpm
 
@@ -10,10 +12,14 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install pdo_mysql
 
 # 独自のphp.iniファイルをコンテナ内にコピー
-COPY docker/php/php.ini /usr/local/etc/php/
-
-# アプリケーションのソースコードをコンテナにコピー
-COPY src /var/www/html
+COPY ./docker/php/php.ini /usr/local/etc/php/
 
 # 作業ディレクトリを設定
 WORKDIR /var/www/html
+
+
+#NGINX----------------------------------------------------------------
+
+
+# アプリケーションのソースコードをコンテナにコピー
+COPY ./src /var/www/html
