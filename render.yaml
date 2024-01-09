@@ -1,5 +1,6 @@
 services:
-  - type: pserv
+  #- type: pserv
+  - type: web
     name: app
     runtime: docker
     region: singapore # optional (defaults to oregon)
