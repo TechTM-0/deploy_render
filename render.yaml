@@ -1,13 +1,13 @@
 services:
-  #- type: pserv
-  - type: web
+  - type: pserv
+  #- type: web
     name: app
     runtime: docker
     region: singapore # optional (defaults to oregon)
     plan: free
     rootDir: ./
     
-    healthCheckPath: /
+    
     dockerfilePath: ./docker/php/Dockerfile
     #buildCommand: 'docker build -f ./docker/php/Dockerfile -t app .'
   
@@ -24,6 +24,7 @@ services:
         value: 9000
 
   - type: web
+    healthCheckPath: /
     name: nginx
     runtime: nginx:1.25.0
     image:
