@@ -6,7 +6,7 @@ services:
     plan: free
     rootDir: ./
     
-    #healthCheckPath: /
+    healthCheckPath: /
     dockerfilePath: ./docker/php/Dockerfile
     #buildCommand: 'docker build -f ./docker/php/Dockerfile -t app .'
   
