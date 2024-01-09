@@ -5,10 +5,13 @@ services:
     region: singapore # optional (defaults to oregon)
     plan: free
     rootDir: ./
-    buildCommand: 'docker build -f ./docker/php/Dockerfile -t app .'
-    #buildCommand: docker build -t app ./docker/php
+    
+    
     #startCommand: "docker run -d -p 3306:3306 app"
     healthCheckPath: /
+    dockerfilePath: ./docker/php
+    #buildCommand: 'docker build -f ./docker/php/Dockerfile -t app .'
+    buildCommand: docker build -t app .
     envVars:
       - key: MYSQL_ROOT_PASSWORD
         value: ${MYSQL_ROOT_PASSWORD}
