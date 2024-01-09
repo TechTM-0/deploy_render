@@ -31,6 +31,7 @@ services:
         fromRegistryCreds:
           name: my-credential-name
     buildCommand: cp ./docker/nginx/default.conf /etc/nginx/conf.d
+    startCommand: nginx -g 'daemon off;'
 
 #    image: 
 #      url: 'nginx:1.25.0'
