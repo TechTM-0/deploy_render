@@ -22,6 +22,8 @@ services:
     healthCheckPath: /
     name: nginx
     runtime: docker
+    region: singapore # optional (defaults to oregon)
+    plan: free
     rootDir: ./
     dockerfilePath: ./docker/nginx/Dockerfile
 #    startCommand: nginx -g 'daemon off;'  # 追加
