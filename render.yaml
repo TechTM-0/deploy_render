@@ -21,13 +21,15 @@ services:
   - type: web
     healthCheckPath: /
     name: nginx
-    runtime: nginx:1.25.0
-    startCommand: nginx -g 'daemon off;'  # 追加
-    image:
-      url: docker.io/nginx:1.25.0
-      creds:
-        fromRegistryCreds:
-          name: my-credential-name
+    runtime: docker
+    rootDir: ./
+    dockerfilePath: ./docker/nginx/Dockerfile
+#    startCommand: nginx -g 'daemon off;'  # 追加
+#    image:
+#      url: docker.io/nginx:1.25.0
+#      creds:
+#        fromRegistryCreds:
+#          name: my-credential-name
 #    buildCommand: cp ./docker/nginx/default.conf /etc/nginx/conf.d
 #    startCommand: nginx -g 'daemon off;'
 
