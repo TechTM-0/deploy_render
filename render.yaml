@@ -4,8 +4,9 @@ services:
     runtime: docker
     region: singapore # optional (defaults to oregon)
     plan: free
-    rootDir: deploy_render
-    buildCommand: docker build -f ./docker/php/Dockerfile -t app .
+    rootDir: ./
+    #buildCommand: docker build -f ./docker/php/Dockerfile -t app .
+    buildCommand: docker build -t app ./docker/php
     #startCommand: "docker run -d -p 3306:3306 app"
     healthCheckPath: /
     envVars:
