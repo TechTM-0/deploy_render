@@ -11,6 +11,8 @@ services:
     healthCheckPath: /
     dockerfilePath: ./docker/php/Dockerfile
     #buildCommand: 'docker build -f ./docker/php/Dockerfile -t app .'
+    
+
     #buildCommand: docker build -t app .
     envVars:
       - key: MYSQL_ROOT_PASSWORD
@@ -21,6 +23,8 @@ services:
         value: ${MYSQL_USER}
       - key: MYSQL_PASSWORD
         value: ${MYSQL_PASSWORD}
+      - key: PORT
+        value: 9000
       #disks: #field disks not found in type file.Service
       #- name: src
         #mountPath: /var/www/html
