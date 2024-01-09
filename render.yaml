@@ -11,7 +11,7 @@ services:
     healthCheckPath: /
     dockerfilePath: ./docker/php
     #buildCommand: 'docker build -f ./docker/php/Dockerfile -t app .'
-    buildCommand: docker build -t app .
+    #buildCommand: docker build -t app .
     envVars:
       - key: MYSQL_ROOT_PASSWORD
         value: ${MYSQL_ROOT_PASSWORD}
