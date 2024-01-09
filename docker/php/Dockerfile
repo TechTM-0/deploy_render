@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
 
 # 独自のphp.iniファイルをコンテナ内にコピー
 COPY ./docker/php/php.ini /usr/local/etc/php/
+COPY ./src/php /var/www/html
 
 # 作業ディレクトリを設定
 WORKDIR /var/www/html
@@ -22,4 +23,4 @@ WORKDIR /var/www/html
 
 
 # アプリケーションのソースコードをコンテナにコピー
-COPY ./src /var/www/html
+#COPY ./src /var/www/html
