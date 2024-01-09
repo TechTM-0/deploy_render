@@ -22,6 +22,7 @@ services:
     healthCheckPath: /
     name: nginx
     runtime: nginx:1.25.0
+    startCommand: nginx -g 'daemon off;'  # 追加
     image:
       url: docker.io/nginx:1.25.0
       creds:
