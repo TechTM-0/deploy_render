@@ -1,16 +1,11 @@
 services:
   - type: pserv
-  #- type: web
     name: app
     runtime: docker
     region: singapore # optional (defaults to oregon)
     plan: free
     rootDir: ./
-    
-    
     dockerfilePath: ./docker/php/Dockerfile
-    #buildCommand: 'docker build -f ./docker/php/Dockerfile -t app .'
-  
     envVars:
       - key: MYSQL_ROOT_PASSWORD
         value: ${MYSQL_ROOT_PASSWORD}
@@ -34,6 +29,7 @@ services:
           name: my-credential-name
     buildCommand: cp ./docker/nginx/default.conf /etc/nginx/conf.d
     startCommand: nginx -g 'daemon off;'
+
 
 #    image: 
 #      url: 'nginx:1.25.0'
